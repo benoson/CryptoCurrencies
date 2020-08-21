@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- jQuery -->
+    <script src="jquery-3.5.1.min.js"></script>
+
+    <!-- script -->
+    <script src="script.js" defer></script>
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- animation library -->
+    <link rel="stylesheet" href="animate.css">
+
+
+    <!-- title -->
+    <title>Cryptonian</title>
+
+    <!-- page icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/pageTitle.jpg" />
+</head>
+
+
+<body>
+
+    <div class="page-container">
+
+        <!-- navigation bar -->
+        <div class="navbar-container">
+            <div class="navbar">
+
+                <!-- left side of the navbar -->
+                <div class="navbar-left">
+                    <button class="navbar-item custom-btn" id="homeBtn">Home</button>
+                    <button class="navbar-item custom-btn" id="liveReportsBtn">Live Reports</button>
+                    <button class="navbar-item custom-btn" id="aboutBtn">About</button>
+                </div>
+
+                <!-- right side of the navbar -->
+                <div class="navbar-right">
+                    <input type="text" id="searchCoinsInput" placeholder="Seach For Coins...">
+
+                    <!-- 'search' button -->
+                    <button id="searchCoinsBtn" class="search-button custom-btn">Search</button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- header of the page -->
+        <div class="header">
+            <!-- <h1 class="custom-header">Cryptonian</h1> -->
+            <img src="../assets/newLogo.png" class="custom-header" alt="">
+        </div>
+
+
+
+        <!-- the main section which holds the currently displayed data -->
+        <div id="main-section">
+            
+            <!--------------------- coins container ------------------->
+            <!-- <div class="coins-container">
+
+                <div class="coin-card">
+                    <div class="card-body">
+                        <p class="coin-name">BTC</p>
+                        <p class="coin-symbol">Coin Symbol: btc</p>
+                        <p class="coin-id">Coin ID: bitcoin</p>
+
+                        <div class="coin-more-info-section">
+                            <p class="usdParagraph">
+                                <img class="currency-symbol" src="/assets/dollarSymbol.png" alt="">
+                                USD: 139
+                            </p>
+    
+                            <p class="eurParagraph">
+                                <img class="currency-symbol" src="/assets/euroSymbol.png" alt="">
+                                EUR: 3183
+                            </p>
+                            
+                            <p class="ilsParagraph">
+                                <img class="currency-symbol" src="/assets/ilsSymbol.png" alt="">
+                                ILS: 33491
+                            </p>
+    
+                            <img class="coin-icon" src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579" alt="" class="coin-image">
+                        </div>
+                    </div>
+
+
+                    <div class="coin-bottom-section">
+                        <button class="custom-btn more-info-btn">More Info</button>
+
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+
+            </div> -->
+
+
+
+            <!--------------------- 'about' section ------------------->
+            <div id="aboutSection">
+                <div class="aboutMeText">
+                    <p>Hi ! My name is Ben.</p>
+                    <p>I am 22 years old, from Bat-Yam, and here are some facts about me:</p>
+                    <ol>
+                        <li>My greatest passion is playing soccer !</li>
+                        <li>My second greatest passion is web development.</li>
+                        <li>I am serving in the IAF in a permanent service.</li>
+                        <li>Check out this cool background.</li>
+                        <li>Below, you can see a really awkward photo of me from Purim 2019 !</li>
+                    </ol>
+
+                    <h2>About The Project</h2>
+                    <p>I've had so much fun making this project !</p>
+                    <p>It was an amazing, teaching experience, and I've learned so much about
+                       project time managment, how to take baby steps in the proccess of designing the project
+                       and how to think ahead, in order to design the project in the idial way.
+                    </p>
+                    <p>I really hope you enjoy the project !</p>
+                </div>
+
+                <div class="myImagesSection">
+                    <div class="imgContainer img1">
+                        <img src="../assets/photo4.jpg" class="photo">
+                    </div>
+                    <div class="imgContainer img2">
+                        <img src="../assets/photo1.jpg" class="photo">
+                    </div>
+                    <div class="imgContainer img3">
+                        <img src="../assets/photo2.jpg" class="photo">
+                    </div>
+                    <div class="imgContainer img4">
+                        <img src="../assets/photo3.jpg" class="photo">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!--------------------- the 'you have got chosen too many coins to display' modal ------------------->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <p>Sorry... You are allowed to select up to 5 coins.</p>
+                    <p>Please remove one of the following, in order to track down your 6th choice:</p>
+                </div>
+
+                <div class="modal-body">
+                    <div class="list-of-coins-in-modal">
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <!-- <span class="close custom-btn">Close</span> -->
+                    <!-- <span class="saveChangesOnModalBtn custom-btn">Save Changes</span> -->
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CanvasJS library, used for displaying the live reports about the coins -->
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,516 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    /* background: url("/assets/svgs/a.svg");
+    background-repeat: no-repeat;
+    background-size: 2800px;
+    background-position: top; */
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+.page-container {
+    min-height: 100%;
+    /* background: url("../assets/svgs/a.svg"); */
+    background: url("../assets/staticMainBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: 2500px;
+    background-position: top;
+    background-attachment: fixed;
+}
+
+
+
+/* -------------------- navbar -------------------- */
+.navbar-container {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar {
+    width: 95%;
+    margin: auto;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.2s ease;
+}
+
+.nav-colorful {
+    background-color: #607D8B;
+    box-shadow: -1px 5px 5px #000000a8;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.navbar-left, .navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-item {
+    margin-right: 1rem;
+}
+
+.custom-btn {
+    font-size: 1rem;
+    font-family: inherit;
+    background: none;
+    border: 1px solid #4e1988;
+    border-radius: 4px;
+    padding: 5px 15px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s ease;
+    box-shadow: -4px 4px 0px #4e1988;
+    background: white;
+}
+
+.custom-btn:hover {
+    background-color: #4e1988;
+    color: white;
+    transform: translateX(0.375rem);
+}
+
+.disabled-custom-btn {
+    cursor: not-allowed;
+    color: #778899c7;
+}
+
+.disabled-custom-btn:hover {
+    transform: none;
+    background: none;
+}
+
+.disabled-custom-span {
+    cursor: not-allowed;
+}
+
+.disabled-custom-span:hover {
+    transform: none;
+    background: white;
+    color: #778899c7;
+}
+
+#searchCoinsInput {
+    height: 1.9rem;
+    border-radius: 4px;
+    border: 1px solid lightslategray;
+    padding: 3px 10px;
+    outline: none;
+    font-family: inherit;
+    box-shadow: -4px 4px 0px #4e1988;
+}
+
+.search-button {
+    height: 1.9rem;
+    display: flex;
+    align-items: center;
+    margin-left: 0.5rem;
+}
+
+
+
+
+/* -------------------- header section -------------------- */
+.header {
+    width: 70%;
+    padding: 1rem;
+    margin: 0 auto 2rem;
+}
+
+.custom-header {
+    width: 650px;
+    display: block;
+    margin: auto;
+}
+
+
+
+
+/* -------------------- main section -------------------- */
+#main-section {
+    width: 100%;
+}
+
+
+
+/* -------------------- coins container section -------------------- */
+.coins-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.coin-card {
+    width: 300px;
+    border: 2px solid #4e1988;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: -14px 12px 0 #00000059;
+    background: white;
+    margin: 0 1rem 2rem 1rem;
+    align-self: flex-start;
+}
+
+.loading-image {
+    margin: auto;
+    background: transparent;
+    display: block;
+    width: 150px;
+}
+
+.coin-more-info-section {
+    margin-top: 1.5rem;
+    background: url("../assets/svgs/wavyCorner.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    /* background-position: center; */
+    padding: 1rem;
+    border-radius: 10px;
+    /* color: white; */
+    border: 1px solid lightslategray;
+}
+
+.usdParagraph, .eurParagraph, .ilsParagraph {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 500;
+}
+
+.currency-symbol {
+    width: 42px;
+    height: 42px;
+    margin-right: 0.5rem;
+}
+
+.coin-icon {
+    width: 62px;
+    display: block;
+    margin: 1rem auto;
+}
+
+.coin-name {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.coin-bottom-section {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* ------- toggle button inside a card container ------- */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+  
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+input:checked + .slider {
+    background-color: #0db5e4;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px #0db5e4;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+  
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+
+/* -------------- live reports section -------------- */
+.live-reports-section {
+    width: 80%;
+    margin: auto;
+}
+
+.canvasjs-chart-canvas {
+    box-shadow: -25px 25px 12px 1px #00000059;
+}
+
+.no-money-image {
+    width: 700px;
+    display: block;
+    margin: auto;
+}
+
+
+
+
+/* -------------- 'about me' section -------------- */
+#aboutSection {
+    display: none;
+}
+
+.aboutMeText {
+    background: url("../assets/svgs/rainslower.svg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: white;
+    width: 50%;
+    margin: auto auto 3rem auto;
+    text-align: center;
+    box-shadow: -14px 12px 0px 1px #00000059;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+}
+
+.aboutMeText ol {
+    display: inline-block;
+    text-align: left;
+}
+
+.myImagesSection {
+    width: 50%;
+    margin: auto;
+    display: grid;
+
+    /* number of columns in the grid (8) */
+    grid-template-columns: repeat(8, 1fr);
+
+    /* number of rows in the grid (5) */
+    grid-template-rows: repeat(5, 5vw);
+    grid-gap: 15px;
+    padding-bottom: 3rem;
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+    border: 2px solid white;
+    box-shadow: -14px 12px 0px 1px #00000059;
+}
+
+.img1 .photo, .img2 .photo, .img4 .photo {
+    object-position: top;
+}
+
+.img1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.img2 {
+    grid-column-start: 5;
+    grid-column-end: 9;
+
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.img3 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+
+.img4 {
+    grid-column-start: 6;
+    grid-column-end: 9;
+
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+
+
+
+
+
+/* -------------- modal section -------------- */
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    border-radius: 15px;
+    box-shadow: -20px 14px 5px #00000054;
+    position: relative;
+}
+
+.modal-header {
+    text-align: center;
+    background-color: #4e1988;
+    border-radius: 10px;
+    color: white;
+    padding: 1px 0;
+    margin-bottom: 2rem;
+}
+
+/* .modal-body {
+
+} */
+
+.list-of-coins-in-modal {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* The Close Button */
+.close {
+    margin-right: 2rem;
+}
+
+.close:hover,
+.close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-list-coin-card {
+    width: 250px;
+    border: 2px solid #4e1988;
+}
+
+.modal-list-coin-card .coin-more-info-section {
+    background-size: contain;
+}
+
+
+
+.no-results-found-image {
+    width: 500px;
+    display: block;
+    margin: auto auto 100px auto;
+}
+
+
+
+/* -------------- media queries -------------- */
+
+@media screen and (max-width: 1493px) {
+    .page-container {
+        background-size: 2200px;
+    }
+}
+
+@media screen and (max-width: 1123px) {
+    .page-container {
+        background-size: 1800px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .custom-header {
+        width: 100%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-left {
+        margin-bottom: 1rem;
+    }
+
+    .no-results-found-image, .no-money-image {
+        width: 400px;
+    }
+
+    .aboutMeText {
+        font-size: 0.9rem;
+    }
+
+    .page-container {
+        background-size: 1400px;
+    }
+}
